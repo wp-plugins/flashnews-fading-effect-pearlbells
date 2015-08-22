@@ -14,8 +14,8 @@ Do you want to display flash news concisely in your webpage and link it to the m
  You can link your news to the different webpages using the `read more` link button.You can display as many news as you want as a loop.
 It is possible to customise the look and feel of the flash news area from the backend administrator area.
 
-Live Demo - <a href="http://pearlbells.co.uk/joomlaportfolio/21-flash-news-fade-in-out-.html">Click here</a>
-How to install - <a href="http://pearlbells.co.uk/joomlaportfolio/21-flash-news-fade-in-out-.html">Click here</a>
+Live Demo - <a href="http://pearlbells.co.uk/flash-news-fade-inout-pearlbells/">Click here</a>
+How to install - <a href="http://pearlbells.co.uk/flash-news-fade-inout-pearlbells/">Click here</a>
 
  - can set the width and height of the flash news area.
  - can set background color of the flash news area.
