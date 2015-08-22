@@ -185,115 +185,31 @@ class pearl_flash_news_fade_in_out_class
 	
 	function pearl_flash_news_fade_in_out_update_option()
 	{
-		$ok = false;
+                $ok = false;
+                $message = '';
+                $optionValues = $_POST;
+
+                foreach($optionValues as $key => $value){
+
+                  if ( get_option( $key ) !== false ) {
+                    update_option($key,$value);
+                                $ok = true;
+                  }
+
+                }
+
+                if($ok)
+                {
+                    $message = '<div id="message" class="updated fade"><p>Options Saved</p></div>';
+                }
+                else
+                {
+                    $message = '<div id="message" class="error fade"><p>Failed to save options</p></div> ';
+
+                }
+
+                echo $message;
 		
-		if($_REQUEST['pearl_news_flash_read_more_new_window'])
-		{
-			update_option('pearl_news_flash_read_more_new_window',$_REQUEST['pearl_news_flash_read_more_new_window']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_news_flash_font_color_read_more'])
-		{
-			update_option('pearl_news_flash_font_color_read_more',$_REQUEST['pearl_news_flash_font_color_read_more']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_read_more'])
-		{
-			update_option('pearl_flash_news_fade_in_out_read_more',$_REQUEST['pearl_flash_news_fade_in_out_read_more']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_links'])
-		{
-			update_option('pearl_flash_news_fade_in_out_links',$_REQUEST['pearl_flash_news_fade_in_out_links']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_height'])
-		{
-			update_option('pearl_flash_news_fade_in_out_height',$_REQUEST['pearl_flash_news_fade_in_out_height']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_width'])
-		{
-			update_option('pearl_flash_news_fade_in_out_width',$_REQUEST['pearl_flash_news_fade_in_out_width']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_bg_color'])
-		{
-			update_option('pearl_flash_news_fade_in_out_bg_color',$_REQUEST['pearl_flash_news_fade_in_out_bg_color']);
-			$ok = true;
-			
-		}		
-		if($_REQUEST['pearl_flash_news_fade_in_out_padding'])
-		{
-			update_option('pearl_flash_news_fade_in_out_padding',$_REQUEST['pearl_flash_news_fade_in_out_padding']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_border_width'])
-		{
-			update_option('pearl_flash_news_fade_in_out_border_width',$_REQUEST['pearl_flash_news_fade_in_out_border_width']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_border_color'])
-		{
-			update_option('pearl_flash_news_fade_in_out_border_color',$_REQUEST['pearl_flash_news_fade_in_out_border_color']);
-			$ok = true;
-			
-		}			
-		if($_REQUEST['pearl_flash_news_fade_in_out_letter_spacing'])
-		{
-			update_option('pearl_flash_news_fade_in_out_letter_spacing',$_REQUEST['pearl_flash_news_fade_in_out_letter_spacing']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_content'])
-		{
-			update_option('pearl_flash_news_fade_in_out_content',$_REQUEST['pearl_flash_news_fade_in_out_content']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_font_color'])
-		{
-			update_option('pearl_flash_news_fade_in_out_font_color',$_REQUEST['pearl_flash_news_fade_in_out_font_color']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_font_size'])
-		{
-			update_option('pearl_flash_news_fade_in_out_font_size',$_REQUEST['pearl_flash_news_fade_in_out_font_size']);
-			$ok = true;
-			
-		}
-		if($_REQUEST['pearl_flash_news_fade_in_out_delay'])
-		{
-			update_option('pearl_flash_news_fade_in_out_delay',$_REQUEST['pearl_flash_news_fade_in_out_delay']);
-			$ok = true;
-			
-		}
-		
-		
-		if($ok)
-		{?>
-           <div id="message" class="updated fade">
-           <p>Options Saved</p>
-           </div>
-        <?php
-		}
-		else
-		{
-			?>
-           <div id="message" class="error fade">
-           <p>Failed to save options</p>
-           </div>
-        <?php
-		}
 	}
 	
 	function pearl_flash_news_fade_in_out_print_option()

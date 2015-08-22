@@ -3,7 +3,7 @@ Contributors: lizeipe
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W884YAWEDPA9U
 Tags: Flash News,Fade in/out news,Display news,News announcement
 Requires at least: 2.0.2
-Tested up to: 3.0
+Tested up to: 4.3
 Stable tag: 4.3
 
 This plugin help to display flash news in your webpage /post as a loop .
@@ -76,6 +76,9 @@ the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1
 
 
 == Upgrade Notice ==
+
+= 2.0 =
+Compatible with 4.3
 
 = 1.0 =
 Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
