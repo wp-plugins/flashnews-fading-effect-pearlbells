@@ -3,7 +3,7 @@
 Plugin Name: Flash News Fade In/Out Pearlbells
 Plugin URI: http://pearlbells.co.uk/
 Description: Flash News Fade In/Out Pearlbells
-Version:  1.0
+Version:  2.0
 Author:Pearlbells
 Author URI: http://pearlbells.co.uk/contact.html
 License: GPL2
