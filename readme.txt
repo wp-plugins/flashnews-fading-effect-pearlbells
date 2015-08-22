@@ -55,11 +55,11 @@ How to install - <a href="http://pearlbells.co.uk/joomlaportfolio/21-flash-news-
 
    Yes you can customise it from the backend.
 
-= Can I set the `read more` link to open in new/same window ?=
+= Can I set the `read more` link to open in new/same window ? =
    
    Yes you can set as you wish.
 
-= Is there option to avoid using 'read more' link?
+= Is there option to avoid using 'read more' link? =
 
    Yes you can.
 
