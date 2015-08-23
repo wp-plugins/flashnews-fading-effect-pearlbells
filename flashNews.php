@@ -34,7 +34,7 @@ class flashNews {
          add_action( 'admin_menu', array( $this, 'menu' ) );
          $objOptions = new optionsValues;
          $objOptions->add_options();
-         new data;
+         new dataFlashPearl;
          new styleData;
          
      }
