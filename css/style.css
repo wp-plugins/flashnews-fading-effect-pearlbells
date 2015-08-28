@@ -3,4 +3,19 @@
         text-decoration:none;
         font-weight:bold;
 }
+.pearl_flash_news_fade_in_out,
+.pearl_flash_news_fade_in_out_box
+{
+    border : 1px solid #999;
+    border-radius: 5px;
+    margin : 10px 0;
+    padding: 10px;
+    position :relative;
+}
+
+.pearl_flash_news_fade_in_out div,
+.pearl_flash_news_fade_in_out_box div{
+    position: absolute;
+    padding : 10px;
+}
 

@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Flash News Pearlbells
+Plugin Name: Flash News / Post Pearlbells
 Plugin URI: http://pearlbells.co.uk/
-Description:  Content Slider Pearlbells
+Description:  Custom Post Slideshow ( based on category optional) Pearlbells
 Version:  4.0
 Author:Pearlbells
 Author URI: http://pearlbells.co.uk/contact-page
@@ -23,6 +23,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 */
+namespace flashnewspearlbells;
 include_once 'includes/form.php';
 include_once 'includes/data.php';
 include_once 'includes/optionsValues.php';
@@ -30,18 +31,25 @@ include_once 'includes/style.php';
 
 class flashNews {
     
+     private $objFlashDisplayForms;
+     private $objOptions;
+     private $objStyle;
+     
      public function __construct() {
          add_action( 'admin_menu', array( $this, 'menu' ) );
-         $objOptions = new optionsValues;
-         $objOptions->add_options();
+         $this->objOptions = new optionsValues;
+         $this->objFlashDisplayForms = new flashDisplayForm;
+         $this->objOptions->add_options();
          new dataFlashPearl;
-         new styleData;
-         
+         $this->objStyle = new styleData;
      }
      
      public function menu() {
-        add_options_page('Flash News','Flash News','manage_options',__FILE__,array($this,'opt_page')); 
-         
+       
+        add_menu_page( 'Flash News', 'Flash News', 'manage_options','pearl-flash-news' );
+        add_submenu_page( 'pearl-flash-news', 'Settings', 'Settings', 'manage_options', 'pearl-flash-news', array( $this, 'opt_page' ) );
+        add_submenu_page( 'pearl-flash-news', 'News', 'News', 'manage_options', 'pearl-flash-post', array( $this, 'display_news' ) );  
+        
      }
   
      public function opt_page() {
@@ -49,14 +57,18 @@ class flashNews {
          $this->postData();
      }
      
+     public function display_news() {
+         if($_REQUEST['save']) 
+             $this->objOptions->update_options();
+       $this->objFlashDisplayForms->postForm();
+     }
+     
      public function postData() {
     
-        if($_REQUEST['submit']) {
-            $objOptions = new optionsValues;
-            $objOptions->update_options();       
-        }
-        
-         new flashDisplayForm;
+        if($_REQUEST['submit']) 
+            $this->objOptions->update_options();       
+         $this->objFlashDisplayForms->optionsForm();
+       
     }
      
 }

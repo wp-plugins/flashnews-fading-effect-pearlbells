@@ -1,23 +1,26 @@
 <?php
-
+namespace flashnewspearlbells;
 class optionsValues {
     
     public function add_options()
     {
-        add_option('pearl_flash_news_fade_in_out_content','Lorem Ipsum is simply dummy text -- of the printing and typesetting industry','','yes');
-        add_option('pearl_flash_news_fade_in_out_links','http://pearlbells.co.uk/ -- http://pearlbells.co.uk/photo-gallery/','','yes');
+        add_option('pearl_flash_news_fade_in_out_content','Do you want to display flash news concisely in your webpage and link it to the main page? This plugin helps to display 
+            flash news in your WordPress website. You can link your news to the different webpages using the read more link button. -- Do you want to display flash news in your webpage or post ? 
+            This plugin help to display flash news in your webpage /post as a loop with typewriter effect.
+            ','','yes');
+        add_option('pearl_flash_news_fade_in_out_links','http://pearlbells.co.uk/flash-news-fade-inout-pearlbells/ -- http://pearlbells.co.uk/news-typewriter/','','yes');
         add_option('pearl_flash_news_fade_in_out_font_color','#000000','','yes');
         add_option('pearl_flash_news_fade_in_out_font_size','14px','','yes');
-        add_option('pearl_flash_news_fade_in_out_delay','5000','','yes');
+        add_option('pearl_flash_news_fade_in_out_delay','3000','','yes');
         add_option('pearl_flash_news_fade_in_out_letter_spacing','2px','','yes');
         add_option('pearl_flash_news_fade_in_out_padding','10px','','yes');
         add_option('pearl_flash_news_fade_in_out_border_width','4px','','yes');
         add_option('pearl_flash_news_fade_in_out_border_color','#999999','','yes');
-        add_option('pearl_flash_news_fade_in_out_height','50px','','yes');
-        add_option('pearl_flash_news_fade_in_out_width','500px','','yes');
+        add_option('pearl_flash_news_fade_in_out_height','180px','','yes');
+        add_option('pearl_flash_news_fade_in_out_width','700px','','yes');
         add_option('pearl_flash_news_fade_in_out_bg_color','#bd1000','','yes');	
         add_option('pearl_flash_news_fade_in_out_read_more','yes','','yes');
-        add_option('pearl_news_flash_font_color_read_more','#ffffff','','yes');
+        add_option('pearl_news_flash_font_color_read_more','#bd1000','','yes');
         add_option('pearl_news_flash_read_more_new_window','yes','','yes');
     }
     

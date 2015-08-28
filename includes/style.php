@@ -1,5 +1,5 @@
 <?php
-
+namespace flashnewspearlbells;
 class styleData {
     
     public function __construct() {
@@ -17,9 +17,8 @@ class styleData {
     public function pearl_script()
     {            
          // create array of all scripts
-        $scripts = array( 'jquery' => '../js/jquery.js',
-                          'main' => '../js/main.js' );
-
+        $scripts = array( 'jquery' => 'js/jquery.js',
+                          'main' => 'js/main.js' );
         $pluginOptions = array(
                 'news_content' => get_option( 'pearl_flash_news_fade_in_out_content' ),
                 'news_links' => get_option( 'pearl_flash_news_fade_in_out_links' ),
@@ -38,11 +37,11 @@ class styleData {
             );
         foreach($scripts as $key => $sc)
         {
-           wp_register_script( $key, plugins_url( $sc, __FILE__) , array('jquery') );
+           wp_deregister_script( $key );
+           wp_register_script( $key, plugin_dir_url(dirname(__FILE__)).$sc , array('jquery') );
            wp_enqueue_script( $key );  
         }
-        wp_localize_script( 'main', 'pluginOptions', $pluginOptions );
-
+        wp_localize_script( 'main', 'pluginOptions', $pluginOptions ); 
     }
 
 }

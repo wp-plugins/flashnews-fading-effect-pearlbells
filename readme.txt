@@ -1,17 +1,18 @@
 === Plugin Name ===
 Contributors: lizeipe 
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W884YAWEDPA9U
-Tags: Flash News,Fade in/out news,Display news,News announcement
+Tags: Flash News,Fade in/out news,Display custom post,post slideshow,content slideshow , 
 Requires at least: 2.0.2
 Tested up to: 4.3
 Stable tag: 4.3
 
-This plugin help to display flash news in your webpage /post as a loop .
+This plugin help to display post types and custom content in your webpage /post as a loop .You can also display the post based on the categories.
 
 == Description ==
 
-Do you want to display flash news concisely in your webpage and link it to the main page? This plugin helps to display flash news in your Wordpress website.
- You can link your news to the different webpages using the `read more` link button.You can display as many news as you want as a loop.
+Do you want to display flash news or post in your webpage and link it to the main page or any external links? 
+This plugin helps to display flash news or custom post types in your Wordpress website as a slideshow.
+You can link your news to the different webpages using the `read more` link .You can display as many news as you want as a loop.
 It is possible to customise the look and feel of the flash news area from the backend administrator area.
 
 Live Demo - <a href="http://pearlbells.co.uk/flash-news-fade-inout-pearlbells/">Click here</a>
@@ -38,6 +39,8 @@ How to install - <a href="http://pearlbells.co.uk/flash-news-fade-inout-pearlbel
 6. click 'install now'
 7. click `activate the plugin`.
 8. Go to the webpage where you want to display flash news and enter `[pearl_flash_news_fade_in_out_display]`
+9. If you want to display custom post type enter `[pearl_flash_news_fade_in_out_display post_type='custom_post_name']`
+10. if you want to display post based on the category enter `[pearl_flash_news_fade_in_out_display category='category-name']`
 
 
 == Frequently Asked Questions ==
@@ -70,6 +73,9 @@ the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1
 2. This is the second screen shot
 
 == Changelog ==
+
+= 3.0 =
+* Added additional functionalities now you display custom post types and post based on the categories
 
 = 2.0 =
 * Changed code structure

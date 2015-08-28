@@ -1,15 +1,41 @@
 <?php
+namespace flashnewspearlbells;
 class flashDisplayForm {
-    
-    public function __construct() {
+   
+    public function postForm() {
+     
+        $default_pearl_flash_news_fade_in_out_content = get_option('pearl_flash_news_fade_in_out_content');
+        $default_pearl_flash_news_fade_in_out_links = get_option('pearl_flash_news_fade_in_out_links');
+        $default_pearl_news_flash_font_color_read_more = get_option('pearl_news_flash_font_color_read_more');
+        $yesStatus = ( ( get_option('pearl_flash_news_fade_in_out_read_more') == 'yes' )  ) ? 'checked' : 'unchecked';
+        $noStatus = ( get_option('pearl_flash_news_fade_in_out_read_more') == 'no'  ) ? 'checked' : 'unchecked';
+        $yesNewWindow = ( ( get_option('pearl_news_flash_read_more_new_window') == 'yes' )  ) ? 'checked' : 'unchecked';
+        $noNewWindow = ( get_option('pearl_news_flash_read_more_new_window') == 'no'  ) ? 'checked' : 'unchecked';
         
-        $this->optionsForm();
-        $this->authorDetails();
+        $displayPostForm = '<div class = "wrap">
+                            <form method="post" action="'.$PHP_SELF.'">
+                            <h1>Display News</h1> 
+                            <label for="pearl_flash_news_fade_in_out_content">Enter Flashing News :(Enter flash news here and use -- as separator)</label><br/>
+                            <textarea rows="8" cols="50" name="pearl_flash_news_fade_in_out_content" >'.$default_pearl_flash_news_fade_in_out_content.'</textarea><br/>
+                            <label for="pearl_flash_news_fade_in_out_links">Enter Read More links as the same order as news :(Enter flash news links here and use -- as separator)</label><br/>
+                            <textarea rows="8" cols="50" name="pearl_flash_news_fade_in_out_links" >'.$default_pearl_flash_news_fade_in_out_links.'</textarea><br/>  ';
+                            $displayPostForm .= '<h3>Read More Settings</h3>
+                            <label for="pearl_flash_news_fade_in_out_read_more">Show Read More :</label>
+                            <input type="radio" name="pearl_flash_news_fade_in_out_read_more" value="yes" '.$yesStatus.' /> Yes 
+                            <input type="radio" name="pearl_flash_news_fade_in_out_read_more" value="no" '.$noStatus.' /> No<br/>
+                            <label for="pearl_news_flash_font_color_read_more">Read More Color :</label>
+                            <input type="text" name="pearl_news_flash_font_color_read_more" value="'.$default_pearl_news_flash_font_color_read_more.'"/><br/>
+           
+                            <label for="pearl_news_flash_read_more_new_window">Show Read More (New Window) :</label>
+                            <input type="radio" name="pearl_news_flash_read_more_new_window" value="yes"'.$yesNewWindow.' /> Yes 
+                            <input type="radio" name="pearl_news_flash_read_more_new_window" value="no"'.$noNewWindow.' /> No<br/>';
+        $displayPostForm .= '<p class="submit"><input type="submit" value="Save Changes" class="button button-primary" id="submit" name="save"></p></form>
+                            </div>';
+      echo $displayPostForm;
+      $this->authorDetails();
     }
-    
-    private function optionsForm() {
+    public function optionsForm() {
                 
-          $default_pearl_flash_news_fade_in_out_content = get_option('pearl_flash_news_fade_in_out_content');
           $default_pearl_flash_news_fade_in_out_font_color = get_option('pearl_flash_news_fade_in_out_font_color');
 	  $default_pearl_flash_news_fade_in_out_font_size = get_option('pearl_flash_news_fade_in_out_font_size');
 	  $default_pearl_flash_news_fade_in_out_delay = get_option('pearl_flash_news_fade_in_out_delay');
@@ -20,11 +46,7 @@ class flashDisplayForm {
 	  $default_pearl_flash_news_fade_in_out_padding = get_option('pearl_flash_news_fade_in_out_padding');
 	  $default_pearl_flash_news_fade_in_out_border_width = get_option('pearl_flash_news_fade_in_out_border_width');
 	  $default_pearl_flash_news_fade_in_out_border_color = get_option('pearl_flash_news_fade_in_out_border_color');
-	  $default_pearl_flash_news_fade_in_out_links = get_option('pearl_flash_news_fade_in_out_links');
-	  $default_pearl_flash_news_fade_in_out_read_more = get_option('pearl_flash_news_fade_in_out_read_more');
-	  $default_pearl_news_flash_font_color_read_more = get_option('pearl_news_flash_font_color_read_more');
-	  $default_pearl_news_flash_read_more_new_window = get_option('pearl_news_flash_read_more_new_window');
-          
+	
           $displayOptionsForm = '
                 
            <form method="post" action="'.$PHP_SELF.'">
@@ -49,28 +71,12 @@ class flashDisplayForm {
            <input type="text" name="pearl_flash_news_fade_in_out_letter_spacing" value="'.$default_pearl_flash_news_fade_in_out_letter_spacing.'"/>
            <label for="pearl_flash_news_fade_in_out_delay">Delay :</label>
            <input type="text" name="pearl_flash_news_fade_in_out_delay" value="'.$default_pearl_flash_news_fade_in_out_delay.'"/><br/><br/>
-           <label for="pearl_flash_news_fade_in_out_content">Enter Flashing News :(Enter flash news here and use -- as separator)</label><br/>
-           <textarea rows="8" cols="50" name="pearl_flash_news_fade_in_out_content" >'.$default_pearl_flash_news_fade_in_out_content.'</textarea><br/>
-           <h3>Read More Settings</h3>
-           <label for="pearl_flash_news_fade_in_out_read_more">Show Read More :</label>
-           <input type="radio" name="pearl_flash_news_fade_in_out_read_more" value="yes"'.$default_pearl_flash_news_fade_in_out_read_more.' /> Yes 
-           <input type="radio" name="pearl_flash_news_fade_in_out_read_more" value="no"'.$default_pearl_flash_news_fade_in_out_read_more.' /> No<br/>
-           <label for="pearl_news_flash_font_color_read_more">Read More Color :</label>
-           <input type="text" name="pearl_news_flash_font_color_read_more" value="'.$default_pearl_news_flash_font_color_read_more.'"/><br/>
-           
-           <label for="pearl_news_flash_read_more_new_window">Show Read More (New Window) :</label>
-           <input type="radio" name="pearl_news_flash_read_more_new_window" value="yes"'.$default_pearl_news_flash_read_more_new_window.' /> Yes 
-           <input type="radio" name="pearl_news_flash_read_more_new_window" value="no"'.$default_pearl_news_flash_read_more_new_window.' /> No<br/>
-           
-          <br/>
-           <label for="pearl_flash_news_fade_in_out_links">Enter Flashing News :(Enter flash news links here and use -- as separator)</label><br/>
-           <textarea rows="8" cols="50" name="pearl_flash_news_fade_in_out_links" >'.$default_pearl_flash_news_fade_in_out_links.'</textarea><br/>       
-          
+        
            <input type="submit" name="submit" value="Submit"/>
         </form>';
           
           echo $displayOptionsForm;
-
+          $this->authorDetails();
         
     }
     
@@ -83,4 +89,5 @@ class flashDisplayForm {
     }
     
 }
+
 ?>
