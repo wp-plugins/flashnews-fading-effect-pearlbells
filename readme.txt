@@ -86,6 +86,9 @@ the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1
 
 == Upgrade Notice ==
 
+= 3.0 =
+added functionality to display post
+
 = 2.0 =
 Compatible with 4.3
 

@@ -42,8 +42,12 @@ class flashNews {
          $this->objOptions->add_options();
          new dataFlashPearl;
          $this->objStyle = new styleData;
+         register_deactivation_hook(__FILE__, array( $this, 'pearl_uninstall' ));
      }
-     
+   
+     public function pearl_uninstall() {
+         $this->objOptions->delete_options();
+     }
      public function menu() {
        
         add_menu_page( 'Flash News', 'Flash News', 'manage_options','pearl-flash-news' );
